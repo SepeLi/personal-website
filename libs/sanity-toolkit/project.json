@@ -1,0 +1,9 @@
+{
+  "name": "sanity-toolkit",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/sanity-toolkit/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project sanity-toolkit --web",
+  "targets": {}
+}

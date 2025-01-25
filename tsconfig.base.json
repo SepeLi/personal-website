@@ -7,14 +7,21 @@
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
+    "noPropertyAccessFromIndexSignature": false,
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
     "lib": ["es2020", "dom"],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
+    "resolveJsonModule": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@personal-website/procedures": ["libs/procedures/src/index.ts"],
+      "@personal-website/sanity-toolkit": ["libs/sanity-toolkit/src/index.tsx"],
+      "@personal-website/server": ["libs/server/src/index.ts"],
+      "@personal-website/server/*": ["libs/server/src/*"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
