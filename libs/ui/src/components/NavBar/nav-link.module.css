@@ -1,0 +1,35 @@
+.container {
+  position: relative;
+  padding: var(--size-2) var(--size-3);
+  transition: var(--transition-normal);
+  color: var(--color-gray-600);
+}
+
+.container.active {
+  color: var(--color-navy-600);
+}
+
+.label {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-medium);
+}
+
+.indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: var(--size-0);
+  transition: transform 300ms;
+  background-color: var(--color-navy-400);
+  transform: scaleX(0);
+
+  &.active {
+    background-color: var(--color-navy-600);
+    transform: scaleX(1);
+  }
+}
+
+.container:hover .indicator {
+  transform: scaleX(1);
+}

@@ -21,7 +21,8 @@
       "@personal-website/sanity-toolkit": ["libs/sanity-toolkit/src/index.tsx"],
       "@personal-website/server": ["libs/server/src/index.ts"],
       "@personal-website/server/*": ["libs/server/src/*"],
-      "@personal-website/ui": ["libs/ui/src/index.ts"]
+      "@personal-website/ui": ["libs/ui/src/index.ts"],
+      "@personal-website/ui/*": ["libs/ui/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]

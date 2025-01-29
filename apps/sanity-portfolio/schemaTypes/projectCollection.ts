@@ -1,6 +1,6 @@
-import {defineField, defineType} from 'sanity'
+import { defineField, defineType } from 'sanity';
 
-export const projectType = defineType({
+export const projectCollection = defineType({
   name: 'project',
   title: 'Project Collection',
   type: 'document',
@@ -13,7 +13,7 @@ export const projectType = defineType({
     defineField({
       name: 'slug',
       type: 'slug',
-      options: {source: 'title'},
+      options: { source: 'title' },
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -29,7 +29,7 @@ export const projectType = defineType({
     defineField({
       name: 'body',
       type: 'array',
-      of: [{type: 'block'}],
+      of: [{ type: 'block' }],
     }),
   ],
-})
+});

@@ -1,0 +1,71 @@
+.tech-stack-section {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: var(--size-6);
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  background-color: var(--color-white);
+}
+
+.section-title {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  color: var(--color-gray-900);
+  margin-bottom: 4rem;
+}
+
+.category-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--size-8);
+}
+
+.category-card {
+  padding: var(--size-6);
+  border-radius: var(--radius-lg);
+  background-color: var(--color-gray-50);
+}
+
+.category-title {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gray-900);
+  margin-bottom: var(--size-4);
+  line-height: var(--line-height-relaxed);
+}
+
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--size-4);
+}
+
+.tool-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tool-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.tool-name {
+  margin-top: var(--size-2);
+  font-size: var(--font-size-sm);
+  color: var(--color-gray-600);
+}
+
+@media (min-width: 768px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .category-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
