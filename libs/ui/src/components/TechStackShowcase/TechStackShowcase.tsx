@@ -7,7 +7,7 @@ import {
   SiTailwindcss,
   SiTypescript,
 } from 'react-icons/si';
-import styles from './tech-stack.module.css';
+import styles from './tech-stack-showcase.module.css';
 
 const TECH_STACK = [
   {
@@ -24,7 +24,7 @@ const TECH_STACK = [
     ],
   },
   {
-    title: 'Backend',
+    title: 'Backend & Database',
     tools: [
       { Icon: FaNodeJs, name: 'Node.js', color: '#16a34a' },
       { Icon: SiMongodb, name: 'MongoDB', color: '#22c55e' },
@@ -53,7 +53,7 @@ const TECH_STACK = [
   },
 ];
 
-export const TechStack = () => {
+export const TechStackShowcase = () => {
   return (
     <section className={styles['tech-stack-section']}>
       <h2 className={styles['section-title']}>Technologies I Work With</h2>

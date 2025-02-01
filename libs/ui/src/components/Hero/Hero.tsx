@@ -2,36 +2,51 @@ import classNames from 'classnames';
 import Link from 'next/link';
 import styles from './hero.module.css';
 
-export const Hero = () => {
+interface HeroProps {
+  title: string;
+  description: string;
+  subDescription: string;
+  primaryButtonText: string;
+  primaryButtonLink: string;
+  secondaryButtonText: string;
+  secondaryButtonLink: string;
+}
+
+export const Hero = ({
+  title,
+  description,
+  subDescription,
+  primaryButtonText,
+  primaryButtonLink,
+  secondaryButtonText,
+  secondaryButtonLink,
+}: HeroProps) => {
   return (
     <section className={styles['hero-section']}>
       <div className={styles['gradient-top']}>
         <div className={styles['gradient-top-inner']} />
       </div>
       <div className={styles['hero-content']}>
-        <h1 className={styles['hero-title']}>Multimedia Developer</h1>
-        <p className={styles['hero-description']}>
-          I&apos;m a passionate Multimedia Developer specializing in creating
-          engaging digital experiences through various media formats.
-        </p>
-        <p className={styles['hero-sub-description']}>
-          With expertise in web development, video production, animation, and
-          interactive media, I bring creative concepts to life using
-          cutting-edge technologies and industry best practices.
-        </p>
+        <h1 className={styles['hero-title']}>{title}</h1>
+        <p className={styles['hero-description']}>{description}</p>
+        <p className={styles['hero-sub-description']}>{subDescription}</p>
         <div className={styles['button-container']}>
-          <Link href="/about" className="button-primary">
-            Explore More
-          </Link>
-          <Link
-            href="/contact"
-            className={classNames(
-              'button-secondary',
-              styles['secondary-button']
-            )}
-          >
-            Contact Me <span aria-hidden="true">→</span>
-          </Link>
+          {primaryButtonText && (
+            <Link href={primaryButtonLink} className="button-primary">
+              {primaryButtonText}
+            </Link>
+          )}
+          {secondaryButtonText && (
+            <Link
+              href={secondaryButtonLink}
+              className={classNames(
+                'button-secondary',
+                styles['secondary-button']
+              )}
+            >
+              {secondaryButtonText} <span aria-hidden="true">→</span>
+            </Link>
+          )}
         </div>
       </div>
       <div className={styles['gradient-bottom']}>

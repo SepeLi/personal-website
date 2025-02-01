@@ -13,31 +13,68 @@ export default defineType({
     defineField({
       name: 'description',
       title: 'Description',
+      rows: 2,
       type: 'text',
     }),
     defineField({
       name: 'frontend',
       title: 'Frontend',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'all-tags' }] }],
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'all-tags' }],
+          options: {
+            filter:
+              'category->id.current == "frontend" && !(_id in path("frontend[]._ref"))',
+          },
+        },
+      ],
     }),
     defineField({
-      name: 'backend',
-      title: 'Backend',
+      name: 'backendAndDatabase',
+      title: 'Backend & Database',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'all-tags' }] }],
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'all-tags' }],
+          options: {
+            filter:
+              'category->id.current == "backend-and-database" && !(_id in path("backendAndDatabase[]._ref"))',
+          },
+        },
+      ],
     }),
     defineField({
       name: 'design',
       title: 'Design',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'all-tags' }] }],
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'all-tags' }],
+          options: {
+            filter:
+              'category->id.current == "design" && !(_id in path("design[]._ref"))',
+          },
+        },
+      ],
     }),
     defineField({
       name: 'devTools',
       title: 'Dev Tools',
       type: 'array',
-      of: [{ type: 'reference', to: [{ type: 'all-tags' }] }],
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'all-tags' }],
+          options: {
+            filter:
+              'category->id.current == "dev-tools" && !(_id in path("devTools[]._ref"))',
+          },
+        },
+      ],
     }),
   ],
 });

@@ -13,14 +13,9 @@ export default defineType({
     defineField({
       name: 'description',
       title: 'Description',
+      rows: 2,
       type: 'text',
     }),
-    // defineField({
-    //   name: 'form',
-    //   title: 'Form',
-    //   type: 'reference',
-    //   to: [{ type: 'form' }],
-    // }),
     defineField({
       name: 'button',
       title: 'Button Text',

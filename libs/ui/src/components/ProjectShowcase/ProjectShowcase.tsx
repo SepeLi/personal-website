@@ -1,50 +1,25 @@
 'use client';
 
+import { ProjectShowcase as ProjectShowcaseProps } from '@personal-website/procedures';
 import { useRouter } from 'next/navigation';
 import { Card } from '../Card/Card';
-import styles from './projects-timeline.module.css';
+import styles from './project-showcase.module.css';
 
-interface Project {
-  title: string;
-  description: string;
-  year: string;
-  slug?: string;
-}
-
-const projects: Project[] = [
-  {
-    title: 'E-Commerce Platform',
-    description:
-      'Built a full-stack e-commerce platform using Next.js and Stripe integration. asdfqwer awe fsdf wqae rase fasdf wer ',
-    year: '2024',
-    slug: 'e-commerce-platform',
-  },
-  {
-    title: 'Interactive Portfolio',
-    description:
-      'Designed and developed an interactive portfolio website with 3D elements',
-    year: '2023',
-    slug: 'interactive-portfolio',
-  },
-  {
-    title: 'Motion Graphics Showreel',
-    description:
-      'Created a series of animated motion graphics for various clients',
-    year: '2023',
-    slug: 'motion-graphics',
-  },
-];
-
-export function ProjectsTimeline() {
+export const ProjectShowcase = ({
+  title,
+  projects,
+  buttonText,
+  buttonLink,
+}: ProjectShowcaseProps) => {
   const router = useRouter();
 
-  const handleProjectClick = (slug: string) => {
-    router.push(`/projects/${slug}`);
+  const handleProjectClick = (link: string) => {
+    router.push(`/projects/${link}`);
   };
 
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>My Journey & Projects</h2>
+      <h2 className={styles.title}>{title}</h2>
 
       <div className={styles.timeline}>
         {/* Timeline line */}
@@ -65,11 +40,12 @@ export function ProjectsTimeline() {
                 >
                   <Card
                     onClick={() =>
-                      project.slug && handleProjectClick(project.slug)
+                      project.slug?.current &&
+                      handleProjectClick(project.slug.current)
                     }
                   >
                     <span className={styles['project-year']}>
-                      {project.year}
+                      {project.timeStarted}
                     </span>
                     <h3 className={styles['project-title']}>{project.title}</h3>
                     <p className={styles['project-description']}>
@@ -87,10 +63,10 @@ export function ProjectsTimeline() {
       </div>
       <button
         className={`button-primary ${styles['view-all-button']}`}
-        onClick={() => router.push('/projects')}
+        onClick={() => router.push(buttonLink)}
       >
-        View All Projects
+        {buttonText}
       </button>
     </section>
   );
-}
+};

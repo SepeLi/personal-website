@@ -1,2 +1,1 @@
-export * from './services/projects';
-
+export * from './services';

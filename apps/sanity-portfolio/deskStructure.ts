@@ -24,6 +24,9 @@ export default (S: StructureBuilder) =>
                 .child(
                   S.document().schemaType('homePage').documentId('homePage')
                 ),
+              // ...S.documentTypeListItems().filter(
+              //   (listItem) => !['homePage'].includes(listItem.getId() ?? '')
+              // ),
               // S.listItem()
               //   .title('About')
               //   .icon(UserIcon)
@@ -52,7 +55,6 @@ export default (S: StructureBuilder) =>
         .title('Project Collection')
         .icon(StackCompactIcon)
         .child(S.documentTypeList('project')),
-      S.divider(),
 
       // Tech Stacks
       S.listItem()
@@ -66,7 +68,6 @@ export default (S: StructureBuilder) =>
                 .child(
                   S.documentTypeList('tag-category').title('Tag Categories')
                 ),
-              S.divider(),
               S.listItem()
                 .title('Tags By Category')
                 .child(
@@ -85,10 +86,14 @@ export default (S: StructureBuilder) =>
               S.listItem()
                 .title('All Tags')
                 .child(S.documentTypeList('all-tags').title('All Tags')),
-              S.divider(),
             ])
         ),
-      S.divider(),
+
+      // SEO
+      S.listItem()
+        .title('SEO')
+        .icon(StackCompactIcon)
+        .child(S.documentTypeList('seoSchema')),
 
       // Page Widgets
       S.listItem()
@@ -119,5 +124,13 @@ export default (S: StructureBuilder) =>
                   S.document().schemaType('copyright').documentId('copyright')
                 ),
             ])
+        ),
+
+      // Site Settings
+      S.listItem()
+        .title('Site Settings')
+        // .icon(SettingsIcon)
+        .child(
+          S.document().schemaType('siteSettings').documentId('siteSettings')
         ),
     ]);

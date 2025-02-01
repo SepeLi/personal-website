@@ -1,31 +1,6 @@
-// import { SanityLive } from '@personal-website/sanity-toolkit';
-// import { serverClient as trpc } from '@personal-website/server';
-// import { cache } from 'react';
+import { SanityLive } from '@personal-website/sanity-toolkit';
 import { Copyright, NavBar, SocialLinks } from '@personal-website/ui';
 import '@personal-website/ui/global.css';
-// const getAllProjects = cache(async () => {
-//   const trpcCaller = await trpc();
-//   return trpcCaller.project.getAllProjects();
-// });
-
-// export default async function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-//   }) {
-//   const data = await getAllProjects();
-//   return (
-//     <html lang="en">
-//       <body>
-//         {children}
-//         <div>
-//           {data[0].title}
-//         </div>
-//         <SanityLive />
-//       </body>
-//     </html>
-//   );
-// }
 
 // NavLink Component
 const NAV_ITEMS = [
@@ -42,7 +17,7 @@ export const metadata = {
   description: 'Your portfolio website built with Next.js',
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -59,6 +34,7 @@ export default function RootLayout({
         <footer className="bg-white py-6">
           <Copyright />
         </footer>
+        <SanityLive />
       </body>
     </html>
   );

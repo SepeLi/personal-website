@@ -13,21 +13,33 @@ export default defineType({
     defineField({
       name: 'description',
       title: 'Description',
+      rows: 2,
       type: 'text',
     }),
     defineField({
       name: 'subDescription',
       title: 'Sub Description',
+      rows: 5,
       type: 'text',
     }),
     defineField({
-      name: 'primaryButton',
+      name: 'primaryButtonText',
       title: 'Primary Button Text',
       type: 'string',
     }),
     defineField({
-      name: 'secondaryButton',
+      name: 'primaryButtonLink',
+      title: 'Primary Button Link',
+      type: 'string',
+    }),
+    defineField({
+      name: 'secondaryButtonText',
       title: 'Secondary Button Text',
+      type: 'string',
+    }),
+    defineField({
+      name: 'secondaryButtonLink',
+      title: 'Secondary Button Link',
       type: 'string',
     }),
   ],

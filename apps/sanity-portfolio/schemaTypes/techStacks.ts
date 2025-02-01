@@ -29,7 +29,7 @@ const tagCategory = defineType({
         Rule.required().custom((slug) => {
           if (typeof slug === 'undefined') return true;
           const regex = /(^[a-z0-9-]+$)/;
-          if (regex.test(slug.current)) {
+          if (regex.test(slug?.current)) {
             return true;
           } else {
             return 'Only numbers, lowercase letters, and dashes are permitted.';
@@ -43,7 +43,6 @@ const allTags = defineType({
   title: 'All Tags',
   name: 'all-tags',
   type: 'document',
-  // group: 'content',
   icon: FaTag,
   fields: [
     {

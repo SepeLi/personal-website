@@ -4,6 +4,7 @@ export default defineType({
   name: 'homePage',
   title: 'Home Page',
   type: 'document',
+  // __experimental_formPreviewTitle: false,
   fields: [
     defineField({
       name: 'hero',
@@ -11,19 +12,24 @@ export default defineType({
       type: 'heroSchema',
     }),
     defineField({
-      name: 'projects',
-      title: 'Projects Showcase',
-      type: 'projectsShowcase',
+      name: 'projectShowcase',
+      title: 'Project Showcase',
+      type: 'projectShowcase',
     }),
     defineField({
-      name: 'techStack',
+      name: 'techStackShowcase',
       title: 'Tech Stack Showcase',
       type: 'techStackShowcase',
     }),
     defineField({
-      name: 'contact',
+      name: 'contactMe',
       title: 'Contact Me',
       type: 'contactMe',
     }),
   ],
+  preview: {
+    prepare: () => ({
+      title: 'Home Page',
+    }),
+  },
 });
