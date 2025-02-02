@@ -40,9 +40,22 @@ export interface TechStackShowcase {
   devTools: TechStack[];
 }
 
+type FormType = 'text' | 'email' | 'textarea';
+
+interface FormField {
+  id: string;
+  label: string;
+  type: FormType;
+  placeholder: string;
+  required: boolean;
+  fullWidth: boolean;
+  rows: number;
+}
+
 export interface ContactMe {
   title: string;
   description: string;
+  formFields: FormField[];
   buttonText: string;
 }
 
@@ -86,6 +99,40 @@ export const getHomePageContent = async (): Promise<HomePage> =>
             },
           },
         }`
+      ),
+    })
+  ).data;
+
+interface SiteLogo {
+  siteName: string;
+}
+
+export interface NavigationLink {
+  label: string;
+  link: string;
+}
+
+export interface Copyright {
+  text: string;
+}
+
+export interface SiteWidgets {
+  siteLogo: SiteLogo;
+  navigationLinks: {
+    items: NavigationLink[];
+  };
+  copyright: Copyright;
+}
+
+export const getPageWidgets = async (): Promise<SiteWidgets> =>
+  (
+    await sanityFetch({
+      query: defineQuery(
+        `{'siteLogo': *[!(_id in path("drafts.**")) && _id == "siteLogo"][0],
+          'navigationLinks': *[!(_id in path("drafts.**")) && _id == "navigationLinks"][0]{
+            ...
+          },
+          'copyright': *[!(_id in path("drafts.**")) && _id == "copyright"][0]}`
       ),
     })
   ).data;

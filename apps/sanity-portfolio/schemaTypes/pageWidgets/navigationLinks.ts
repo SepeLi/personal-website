@@ -1,8 +1,8 @@
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'navigation',
-  title: 'Navigation',
+  name: 'navigationLinks',
+  title: 'Navigation Links',
   type: 'document',
   fields: [
     defineField({
@@ -30,4 +30,9 @@ export default defineType({
       ],
     }),
   ],
+  preview: {
+    prepare: () => ({
+      title: 'Navigation Links',
+    }),
+  },
 });

@@ -45,7 +45,9 @@ export const ProjectShowcase = ({
                     }
                   >
                     <span className={styles['project-year']}>
-                      {project.timeStarted}
+                      {new Date(project.timeStarted).toLocaleDateString(
+                        'en-GB'
+                      )}
                     </span>
                     <h3 className={styles['project-title']}>{project.title}</h3>
                     <p className={styles['project-description']}>

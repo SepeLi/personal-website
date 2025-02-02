@@ -104,13 +104,17 @@ export default (S: StructureBuilder) =>
             .title('Page Widgets')
             .items([
               S.listItem()
-                .title('Navigation')
+                .title('Site Logo')
                 .child(
-                  S.document().schemaType('navigation').documentId('navigation')
+                  S.document().schemaType('siteLogo').documentId('siteLogo')
                 ),
               S.listItem()
-                .title('Logo')
-                .child(S.document().schemaType('logo').documentId('logo')),
+                .title('Navigation Links')
+                .child(
+                  S.document()
+                    .schemaType('navigationLinks')
+                    .documentId('navigationLinks')
+                ),
               S.listItem()
                 .title('Social Links')
                 .child(

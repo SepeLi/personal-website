@@ -11,11 +11,10 @@ export default defineType({
       type: 'string',
       validation: (Rule) => Rule.required(),
     }),
-    defineField({
-      name: 'year',
-      title: 'Year',
-      type: 'number',
-      validation: (Rule) => Rule.required(),
-    }),
   ],
+  preview: {
+    prepare: () => ({
+      title: 'Copyright',
+    }),
+  },
 });

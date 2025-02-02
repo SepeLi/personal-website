@@ -51,6 +51,16 @@ const allTags = defineType({
       type: 'string',
       validation: (Rule) => Rule.required(),
     },
+    // {
+    //   title: 'Icon',
+    //   name: 'icon',
+    //   type: 'iconPicker',
+    //   options: {
+    //     providers: ['si'],
+    //     // outputFormat: 'react',
+    //   },
+    //   validation: (Rule) => Rule.required(),
+    // },
     {
       title: 'Category',
       name: 'category',

@@ -1,10 +1,16 @@
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'logo',
-  title: 'Logo',
+  name: 'siteLogo',
+  title: 'Site Logo',
   type: 'document',
   fields: [
+    defineField({
+      name: 'siteName',
+      title: 'Site Name',
+      type: 'string',
+      validation: (Rule) => Rule.required(),
+    }),
     defineField({
       name: 'image',
       title: 'Logo Image',
@@ -17,7 +23,12 @@ export default defineType({
       name: 'alt',
       title: 'Alt Text',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+      hidden: ({ parent }) => !parent?.image,
     }),
   ],
+  preview: {
+    prepare: () => ({
+      title: 'Site Logo',
+    }),
+  },
 });

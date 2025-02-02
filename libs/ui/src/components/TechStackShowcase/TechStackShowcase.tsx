@@ -1,9 +1,14 @@
-import { FaFigma, FaGitAlt, FaNodeJs, FaReact, FaStripe } from 'react-icons/fa';
+import { FaFigma, FaGitAlt, FaNodeJs, FaReact } from 'react-icons/fa';
 import {
-  SiAdobeaftereffects,
-  SiAdobepremierepro,
+  SiAdobeillustrator,
+  SiAdobexd,
+  SiExpress,
+  SiJira,
   SiMongodb,
   SiNextdotjs,
+  SiOpenai,
+  SiPostman,
+  SiSanity,
   SiTailwindcss,
   SiTypescript,
 } from 'react-icons/si';
@@ -15,12 +20,12 @@ const TECH_STACK = [
     tools: [
       { Icon: SiNextdotjs, name: 'Next.js', color: '#111827' },
       { Icon: FaReact, name: 'React', color: '#3b82f6' },
-      { Icon: SiTailwindcss, name: 'Tailwind', color: '#3b82f6' },
       {
         Icon: SiTypescript,
         name: 'TypeScript',
         color: '#2563eb',
       },
+      { Icon: SiTailwindcss, name: 'Tailwind', color: '#3b82f6' },
     ],
   },
   {
@@ -28,28 +33,26 @@ const TECH_STACK = [
     tools: [
       { Icon: FaNodeJs, name: 'Node.js', color: '#16a34a' },
       { Icon: SiMongodb, name: 'MongoDB', color: '#22c55e' },
-      { Icon: FaStripe, name: 'Stripe', color: '#a855f7' },
+      { Icon: SiSanity, name: 'Sanity', color: '#f03e2f' },
+      { Icon: SiExpress, name: 'Express', color: '#000000' },
     ],
   },
   {
     title: 'Design',
     tools: [
       { Icon: FaFigma, name: 'Figma', color: '#9333ea' },
-      {
-        Icon: SiAdobeaftereffects,
-        name: 'After Effects',
-        color: '#1e40af',
-      },
-      {
-        Icon: SiAdobepremierepro,
-        name: 'Premiere Pro',
-        color: '#6b21a8',
-      },
+      { Icon: SiAdobeillustrator, name: 'Adobe Illustrator', color: '#ff9a00' },
+      { Icon: SiAdobexd, name: 'Adobe Xd', color: '#ff61f6' },
     ],
   },
   {
     title: 'Dev Tools',
-    tools: [{ Icon: FaGitAlt, name: 'Git', color: '#ea580c' }],
+    tools: [
+      { Icon: FaGitAlt, name: 'Git', color: '#ea580c' },
+      { Icon: SiPostman, name: 'Postman', color: '#ff6c37' },
+      { Icon: SiOpenai, name: 'OpenAI', color: '#00A67E' },
+      { Icon: SiJira, name: 'Jira', color: '#0052cc' },
+    ],
   },
 ];
 

@@ -1,5 +1,6 @@
 'use client';
 
+import { NavigationLink } from '@personal-website/procedures';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -7,29 +8,25 @@ import { HamburgerButton } from '../HamburgerButton/HamburgerButton';
 import { NavLink } from './NavLink';
 import styles from './nav-bar.module.css';
 
-interface NavItem {
-  href: string;
-  label: string;
-}
-
 interface NavBarProps {
-  navItems: NavItem[];
+  siteName: string;
+  items: NavigationLink[];
 }
 
-export const NavBar = ({ navItems }: NavBarProps) => {
+export const NavBar = ({ items, siteName }: NavBarProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <nav className={styles['navbar']}>
       <div className={styles['navbar-content']}>
         <Link href="/" className={styles['logo']}>
-          <h1>Logo.</h1>
+          <h1>{siteName}</h1>
         </Link>
 
         {/* Desktop Navigation */}
         <div className={styles['desktop-menu']}>
-          {navItems.map((item) => (
-            <NavLink key={item.href} href={item.href} label={item.label} />
+          {items?.map(({ link, label }, idx) => (
+            <NavLink key={idx} href={link} label={label} />
           ))}
         </div>
 
@@ -47,12 +44,12 @@ export const NavBar = ({ navItems }: NavBarProps) => {
         })}
       >
         <div className={styles['mobile-menu-content']}>
-          {navItems.map((item) => (
+          {items.map(({ link, label }, idx) => (
             <NavLink
-              key={item.href}
-              href={item.href}
+              key={idx}
+              href={link}
               onClick={() => setIsMenuOpen(false)}
-              label={item.label}
+              label={label}
             />
           ))}
         </div>

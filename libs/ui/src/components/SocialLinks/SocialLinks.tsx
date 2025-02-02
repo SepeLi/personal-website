@@ -4,7 +4,7 @@ import styles from './social-links.module.css';
 const socialLinks = [
   {
     id: 1,
-    href: 'https://github.com/yourusername',
+    href: 'https://github.com/SepeLi',
     icon: FaGithub,
     label: 'GitHub',
     iconColor: '#333333',
@@ -12,7 +12,7 @@ const socialLinks = [
   },
   {
     id: 2,
-    href: 'https://linkedin.com/in/yourusername',
+    href: 'https://www.linkedin.com/in/sean-li-bne/',
     icon: FaLinkedin,
     label: 'LinkedIn',
     iconColor: '#0077b5',
@@ -20,7 +20,7 @@ const socialLinks = [
   },
   {
     id: 3,
-    href: 'mailto:your.email@example.com',
+    href: '/contact',
     icon: FaEnvelope,
     label: 'Email',
     iconColor: '#ea4335',

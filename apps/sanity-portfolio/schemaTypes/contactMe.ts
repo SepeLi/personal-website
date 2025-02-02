@@ -17,7 +17,12 @@ export default defineType({
       type: 'text',
     }),
     defineField({
-      name: 'button',
+      name: 'formFields',
+      title: 'Form Fields',
+      type: 'formFields',
+    }),
+    defineField({
+      name: 'buttonText',
       title: 'Button Text',
       type: 'string',
     }),

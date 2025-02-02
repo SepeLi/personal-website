@@ -1,21 +1,22 @@
 import contactMe from './contactMe';
-import copyright from './copyright';
+import formFields from './formField';
 import heroSchema from './homePage/hero';
 import homePage from './homePage/homePage';
 import projectShowcase from './homePage/projectShowcase';
 import techStackShowcase from './homePage/techStackShowcase';
-import logo from './logo';
-import navigation from './navigation';
+import copyright from './pageWidgets/copyright';
+import navigationLinks from './pageWidgets/navigationLinks';
+import siteLogo from './pageWidgets/siteLogo';
+import socialLinks from './pageWidgets/socialLinks';
 import { projectCollection } from './projectCollection';
 import seoSchema from './seo';
 import siteSettings from './siteSettings';
-import socialLinks from './socialLinks';
 import { allTags, tagCategory } from './techStacks';
 
 export const schemaTypes = [
   projectCollection,
-  navigation,
-  logo,
+  navigationLinks,
+  siteLogo,
   socialLinks,
   copyright,
   allTags,
@@ -27,4 +28,5 @@ export const schemaTypes = [
   heroSchema,
   seoSchema,
   siteSettings,
+  formFields,
 ];

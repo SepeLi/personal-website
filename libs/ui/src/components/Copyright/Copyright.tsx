@@ -1,9 +1,10 @@
+import { Copyright as CopyrightProps } from '@personal-website/procedures';
 import styles from './copyright.module.css';
 
-export const Copyright = () => {
+export const Copyright = ({ text }: CopyrightProps) => {
   return (
     <div className={styles.container}>
-      <p>© {new Date().getFullYear()} Your Name. All rights reserved.</p>
+      <p>{text}</p>
     </div>
   );
 };

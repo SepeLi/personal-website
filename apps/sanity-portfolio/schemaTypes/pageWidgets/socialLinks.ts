@@ -38,4 +38,9 @@ export default defineType({
       ],
     }),
   ],
+  preview: {
+    prepare: () => ({
+      title: 'Social Links',
+    }),
+  },
 });

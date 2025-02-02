@@ -13,14 +13,17 @@ const getHomePageContent = cache(async () => {
 });
 
 export default async function Index() {
-  const data = await getHomePageContent();
-  console.warn(data);
+  const { hero, projectShowcase, techStackShowcase, contactMe } =
+    await getHomePageContent();
   return (
     <>
-      <Hero {...data.hero} />
-      <ProjectShowcase {...data.projectShowcase} />
+      <Hero {...hero} />
+      <ProjectShowcase {...projectShowcase} />
+      {/* TechStackShowcase is currently hardcoded because
+      there's something wrong with sanity-plugin-icon-picker.
+      https://github.com/christopherafbjur/sanity-plugin-icon-picker/issues/73 */}
       <TechStackShowcase />
-      <ContactMe />
+      <ContactMe {...contactMe} />
     </>
   );
 }
