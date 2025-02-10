@@ -35,9 +35,24 @@ export default defineType({
       type: 'image',
     }),
     defineField({
+      name: 'techStackTags',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'all-tags' }],
+        },
+      ],
+    }),
+    defineField({
       name: 'content',
       type: 'array',
       of: [{ type: 'block' }],
+    }),
+    defineField({
+      name: 'link',
+      title: 'Link',
+      type: 'string',
     }),
   ],
 });

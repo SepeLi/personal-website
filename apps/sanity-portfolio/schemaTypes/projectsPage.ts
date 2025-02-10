@@ -1,8 +1,8 @@
 import { defineField, defineType } from 'sanity';
 
 export default defineType({
-  name: 'aboutMe',
-  title: 'About Me',
+  name: 'projectsPage',
+  title: 'Projects Page',
   type: 'document',
   // __experimental_formPreviewTitle: false,
   fields: [
@@ -21,7 +21,12 @@ export default defineType({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'project' }],
+        },
+      ],
     }),
   ],
 });

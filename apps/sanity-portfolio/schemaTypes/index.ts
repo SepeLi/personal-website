@@ -10,6 +10,7 @@ import navigationLinks from './pageWidgets/navigationLinks';
 import siteLogo from './pageWidgets/siteLogo';
 import socialLinks from './pageWidgets/socialLinks';
 import projectCollection from './projectCollection';
+import projectsPage from './projectsPage';
 import seoSchema from './seo';
 import siteSettings from './siteSettings';
 import { allTags, tagCategory } from './techStacks';
@@ -31,4 +32,5 @@ export const schemaTypes = [
   seoSchema,
   siteSettings,
   formFields,
+  projectsPage,
 ];

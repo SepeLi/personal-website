@@ -1,6 +1,7 @@
 import {
   DocumentIcon,
   HomeIcon,
+  RocketIcon,
   StackCompactIcon,
   ThListIcon,
   UserIcon,
@@ -34,12 +35,14 @@ export default (S: StructureBuilder) =>
                 .child(
                   S.document().schemaType('aboutMe').documentId('aboutMe')
                 ),
-              // S.listItem()
-              //   .title('Projects')
-              //   .icon(RocketIcon)
-              //   .child(
-              //     S.document().schemaType('projects').documentId('projects')
-              //   ),
+              S.listItem()
+                .title('Projects')
+                .icon(RocketIcon)
+                .child(
+                  S.document()
+                    .schemaType('projectsPage')
+                    .documentId('projectsPage')
+                ),
               // S.listItem()
               //   .title('Posts')
               //   .icon(DocumentIcon)
