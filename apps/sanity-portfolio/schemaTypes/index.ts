@@ -1,3 +1,4 @@
+import aboutMe from './aboutMe';
 import contactMe from './contactMe';
 import formFields from './formField';
 import heroSchema from './homePage/hero';
@@ -8,7 +9,7 @@ import copyright from './pageWidgets/copyright';
 import navigationLinks from './pageWidgets/navigationLinks';
 import siteLogo from './pageWidgets/siteLogo';
 import socialLinks from './pageWidgets/socialLinks';
-import { projectCollection } from './projectCollection';
+import projectCollection from './projectCollection';
 import seoSchema from './seo';
 import siteSettings from './siteSettings';
 import { allTags, tagCategory } from './techStacks';
@@ -25,6 +26,7 @@ export const schemaTypes = [
   projectShowcase,
   techStackShowcase,
   contactMe,
+  aboutMe,
   heroSchema,
   seoSchema,
   siteSettings,

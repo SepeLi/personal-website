@@ -3,6 +3,7 @@ import {
   HomeIcon,
   StackCompactIcon,
   ThListIcon,
+  UserIcon,
 } from '@sanity/icons';
 import type { StructureBuilder } from 'sanity/structure';
 
@@ -27,10 +28,12 @@ export default (S: StructureBuilder) =>
               // ...S.documentTypeListItems().filter(
               //   (listItem) => !['homePage'].includes(listItem.getId() ?? '')
               // ),
-              // S.listItem()
-              //   .title('About')
-              //   .icon(UserIcon)
-              //   .child(S.document().schemaType('about').documentId('about')),
+              S.listItem()
+                .title('About')
+                .icon(UserIcon)
+                .child(
+                  S.document().schemaType('aboutMe').documentId('aboutMe')
+                ),
               // S.listItem()
               //   .title('Projects')
               //   .icon(RocketIcon)

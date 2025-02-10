@@ -1,3 +1,4 @@
+export * from './AboutMe/AboutMe';
 export * from './ContactMe/ContactMe';
 export * from './Copyright/Copyright';
 export * from './Hero/Hero';

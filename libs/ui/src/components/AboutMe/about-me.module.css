@@ -1,0 +1,19 @@
+.container {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: var(--size-top) var(--size-6);
+}
+
+.title {
+  font-size: var(--font-size-4xl);
+  color: var(--color-gray-900);
+  margin-bottom: var(--size-8);
+}
+
+.content {
+  background-color: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-1);
+  padding: var(--size-8);
+  margin-bottom: var(--size-10);
+}
