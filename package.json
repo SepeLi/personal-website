@@ -12,6 +12,7 @@
   "private": true,
   "dependencies": {
     "@sanity/vision": "^3.70.0",
+    "@sendgrid/mail": "^8.1.4",
     "@tanstack/react-query": "^4.36.1",
     "@trpc/client": "^10.45.2",
     "@trpc/react-query": "^10.45.2",
