@@ -1,5 +1,6 @@
 export * from './AboutMe/AboutMe';
 export * from './ContactMe/ContactMe';
+export * from './ContactMe/ContactMeForm';
 export * from './Copyright/Copyright';
 export * from './Hero/Hero';
 export * from './NavBar/NavBar';

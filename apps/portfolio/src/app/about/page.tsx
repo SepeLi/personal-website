@@ -1,6 +1,5 @@
 import { serverClient as trpc } from '@personal-website/server';
 import { AboutMe } from '@personal-website/ui';
-import '@personal-website/ui/global.css';
 import { cache } from 'react';
 
 const getAboutMePageContent = cache(async () => {

@@ -54,7 +54,7 @@ interface FormField {
 
 export interface ContactMe {
   title: string;
-  description: string;
+  description?: string;
   formFields: FormField[];
   buttonText: string;
 }
