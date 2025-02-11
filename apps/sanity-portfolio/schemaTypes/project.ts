@@ -27,7 +27,7 @@ export default defineType({
     }),
     defineField({
       name: 'image',
-      type: 'image',
+      type: 'blockImage',
     }),
     defineField({
       name: 'description',
@@ -58,7 +58,7 @@ export default defineType({
     defineField({
       name: 'content',
       type: 'array',
-      of: [{ type: 'block' }, { type: 'image' }],
+      of: [{ type: 'block' }, { type: 'blockImage' }],
     }),
   ],
 });

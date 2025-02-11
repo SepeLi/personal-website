@@ -1,4 +1,5 @@
 import aboutMe from './aboutMe';
+import blockImage from './blockImage';
 import contactMe from './contactMe';
 import formFields from './formField';
 import heroSchema from './homePage/hero';
@@ -33,4 +34,5 @@ export const schemaTypes = [
   siteSettings,
   formFields,
   projectsPage,
+  blockImage,
 ];
