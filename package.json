@@ -7,6 +7,7 @@
     "dev:portfolio": "npx nx dev portfolio",
     "dev:sanity": "npx nx dev sanity-portfolio",
     "deploy:sanity": "npx nx deploy sanity-portfolio",
+    "build:portfolio": "npx nx build portfolio",
     "commit": "npx git-cz"
   },
   "private": true,
