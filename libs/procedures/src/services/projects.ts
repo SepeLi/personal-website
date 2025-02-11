@@ -1,5 +1,6 @@
 import { sanityFetch } from '@personal-website/sanity-toolkit';
 import { SanityDocument } from '@sanity/client';
+import { SanityImageObject } from '@sanity/image-url/lib/types/types';
 import { defineQuery } from 'next-sanity';
 
 export interface Project extends SanityDocument {
@@ -11,6 +12,7 @@ export interface Project extends SanityDocument {
   techStackTags: {
     label: string;
   }[];
+  image: SanityImageObject;
 }
 
 export const getAllProjects = async (): Promise<Project[]> =>
@@ -21,3 +23,17 @@ export const getAllProjects = async (): Promise<Project[]> =>
     }`),
     })
   ).data;
+
+export const getProjectBySlug = async (slug: string): Promise<Project> =>
+  (
+    await sanityFetch({
+      query:
+        defineQuery(`*[!(_id in path("drafts.**")) && _type == "project" && slug.current == $slug] {
+      ...,
+      techStackTags[]-> {
+        label
+      }
+    }`),
+      params: { slug },
+    })
+  ).data[0];

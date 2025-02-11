@@ -16,12 +16,7 @@ export default defineType({
       options: { source: 'title' },
       validation: (rule) => rule.required(),
     }),
-    defineField({
-      name: 'description',
-      title: 'Description',
-      rows: 2,
-      type: 'text',
-    }),
+
     defineField({
       name: 'timeStarted',
       type: 'date',
@@ -35,6 +30,12 @@ export default defineType({
       type: 'image',
     }),
     defineField({
+      name: 'description',
+      title: 'Description',
+      rows: 2,
+      type: 'text',
+    }),
+    defineField({
       name: 'techStackTags',
       type: 'array',
       of: [
@@ -45,14 +46,19 @@ export default defineType({
       ],
     }),
     defineField({
-      name: 'content',
-      type: 'array',
-      of: [{ type: 'block' }],
+      name: 'liveUrl',
+      title: 'Live URL',
+      type: 'string',
     }),
     defineField({
-      name: 'link',
-      title: 'Link',
+      name: 'githubUrl',
+      title: 'GitHub URL',
       type: 'string',
+    }),
+    defineField({
+      name: 'content',
+      type: 'array',
+      of: [{ type: 'block' }, { type: 'image' }],
     }),
   ],
 });

@@ -1,4 +1,5 @@
 import { serverClient as trpc } from '@personal-website/server';
+import Link from 'next/link';
 import { cache } from 'react';
 
 const getProjectsPageContent = cache(async () => {
@@ -17,33 +18,33 @@ export default async function Projects() {
         {content.map((project, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl shadow-sm overflow-hidden flex flex-col"
+            className="bg-white rounded-xl shadow-sm overflow-hidden flex"
           >
-            <div className="h-48 bg-gray-100">
-              {/* Add project image here */}
-            </div>
-            <div className="p-6 grow flex flex-col">
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                {project.title}
-              </h3>
-              <p className="text-gray-600 mb-4 grow">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.techStackTags.map(({ label }, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 bg-sky-50 text-sky-600 rounded-full text-sm"
-                  >
-                    {label}
-                  </span>
-                ))}
+            <Link
+              href={`/projects/${project.slug.current}`}
+              className="text-sky-500 hover:text-sky-800 font-medium flex flex-col grow"
+            >
+              <div className="h-48 bg-gray-100">
+                {/* Add project image here */}
               </div>
-              <a
-                href={`/projects/${project.slug.current}`}
-                className="text-sky-600 hover:text-sky-700 font-medium"
-              >
-                View Project →
-              </a>
-            </div>
+              <div className="p-6 pb-0 grow flex flex-col">
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 mb-4 grow">{project.description}</p>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.techStackTags.map(({ label }, i) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 bg-sky-50 text-sky-600 rounded-full text-sm"
+                    >
+                      {label}
+                    </span>
+                  ))}
+                </div>
+              </div>
+              <span className="p-6 pt-0">View Project →</span>
+            </Link>
           </div>
         ))}
       </div>

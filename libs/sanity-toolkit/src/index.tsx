@@ -1,5 +1,8 @@
+import imageUrlBuilder from '@sanity/image-url';
+import { SanityImageObject } from '@sanity/image-url/lib/types/types';
 import { PortableText, PortableTextProps } from 'next-sanity';
 import { FC } from 'react';
+import { client } from './client/client';
 
 export * from './client/index';
 
@@ -19,9 +22,12 @@ export const SanityContent: FC<Pick<PortableTextProps, 'value'>> = ({
       },
       list: {
         bullet: ({ children }) => (
-          <ul className="space-y-4 text-gray-600">{children}</ul>
+          <ul className="list-disc space-y-2 text-gray-600 pl-8">{children}</ul>
         ),
       },
     }}
   />
 );
+
+const builder = imageUrlBuilder(client);
+export const urlFor = (image: SanityImageObject) => builder.image(image);
