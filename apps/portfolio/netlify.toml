@@ -1,0 +1,9 @@
+[build]
+  ignore = "git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF apps/portfolio libs/ui"
+  base = "/"
+  publish = "dist/apps/portfolio/.next"
+  command = "CI='' npm run build:portfolio"
+
+
+[functions.timeout]
+  max_duration = 360
