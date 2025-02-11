@@ -12,7 +12,6 @@ const getProjectBySlug = cache(async (slug: string) => {
 export default async function ProjectPage({
   params,
 }: {
-  params: { slug: string };
 }) {
   const { slug } = await params;
   const {
@@ -25,10 +24,10 @@ export default async function ProjectPage({
     content,
   } = await getProjectBySlug(slug);
   return (
-    <main className="container mx-auto px-4 py-8 text-gray-900">
+    <main className="container mx-auto px-4 py-16 text-gray-900">
       <div className="max-w-4xl mx-auto">
         {/* Project Header */}
-        <h1 className="text-4xl font-bold mb-4">{title}</h1>
+        <h1 className="text-4xl font-bold mb-12">{title}</h1>
 
         {/* Project Image */}
         {image && (

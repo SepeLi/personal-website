@@ -15,7 +15,6 @@ interface BlockImageProps {
 
 export const BlockImage = (image: BlockImageProps) => {
   const { asset, caption, size, alignment } = image;
-  console.warn(size);
   return (
     <div className="w-full mt-8">
       <div
