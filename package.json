@@ -1,6 +1,6 @@
 {
   "name": "@personal-website/source",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "dev": "npx nx run-many --target=dev --projects=portfolio,sanity-portfolio",
