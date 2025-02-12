@@ -25,7 +25,10 @@ export default defineType({
           type: 'reference',
           to: [{ type: 'project' }],
           options: {
-            filter: '!(_id in path("projects[]._ref"))',
+            // This works before but not now
+            // filter: '!(_id in path("projects[]._ref"))',
+            filter:
+              '!(_id in *[(_id in path("drafts.**")) && _type == "homePage"].projectShowcase.projects[]._ref)',
           },
         },
       ],

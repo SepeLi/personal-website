@@ -32,7 +32,7 @@ export default defineType({
     defineField({
       name: 'description',
       title: 'Description',
-      rows: 2,
+      rows: 4,
       type: 'text',
     }),
     defineField({

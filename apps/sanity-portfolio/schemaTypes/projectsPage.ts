@@ -25,6 +25,10 @@ export default defineType({
         {
           type: 'reference',
           to: [{ type: 'project' }],
+          options: {
+            filter:
+              '!(_id in *[(_id in path("drafts.**")) && _type == "projectsPage"].content[]._ref)',
+          },
         },
       ],
     }),
