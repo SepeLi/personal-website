@@ -1,6 +1,7 @@
 import { createContext } from '@personal-website/server/lib/context';
 import { appRouter } from '@personal-website/server/lib/router';
 import { fetchRequestHandler } from '@trpc/server/adapters/fetch';
+import { TRPCRequestInfo } from '@trpc/server/unstable-core-do-not-import';
 
 // Using a namespaced router, our trpc endpoints look like: http://localhost:4200/api/{namespace}.{procedure}
 const handler = (req: Request) => {
@@ -9,7 +10,11 @@ const handler = (req: Request) => {
     req,
     router: appRouter,
     createContext: async () =>
-      await createContext({ req, resHeaders: {} as Headers }),
+      await createContext({
+        req,
+        resHeaders: {} as Headers,
+        info: {} as TRPCRequestInfo,
+      }),
   });
 };
 
