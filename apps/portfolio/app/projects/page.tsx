@@ -21,14 +21,14 @@ export default async function Projects() {
           ({ slug, title, image, description, techStackTags }, index) => (
             <div
               key={index}
-              className="bg-white rounded-xl shadow-sm overflow-hidden flex"
+              className="bg-white rounded-xl shadow-sm overflow-hidden flex hover:shadow-md"
             >
               <Link
                 href={`/projects/${slug.current}`}
                 className="text-sky-500 hover:text-sky-800 font-medium flex flex-col grow"
               >
                 <div className="h-48 bg-gray-100 relative">
-                  {image && (
+                  {image?.asset && (
                     <Image
                       src={urlFor(image).url()}
                       alt={image.asset.urlText || title}
@@ -43,17 +43,21 @@ export default async function Projects() {
                   <h3 className="text-xl font-semibold text-gray-900 mb-2">
                     {title}
                   </h3>
-                  <p className="text-gray-600 mb-4 grow">{description}</p>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {techStackTags.map(({ label }, i) => (
-                      <span
-                        key={i}
-                        className="px-3 py-1 bg-sky-50 text-sky-600 rounded-full text-sm"
-                      >
-                        {label}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="text-gray-600 mb-4 grow line-clamp-4">
+                    {description}
+                  </p>
+                  {techStackTags?.length && (
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {techStackTags.map(({ label }, i) => (
+                        <span
+                          key={i}
+                          className="px-3 py-1 bg-sky-50 text-sky-600 rounded-full text-sm"
+                        >
+                          {label}
+                        </span>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <span className="p-6 pt-0">View Project →</span>
               </Link>

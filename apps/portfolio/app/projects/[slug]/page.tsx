@@ -31,7 +31,7 @@ export default async function ProjectPage({
         <h1 className="text-4xl font-bold mb-12">{title}</h1>
 
         {/* Project Image */}
-        {image && (
+        {image?.asset && (
           <div className="relative w-full h-[400px] mb-8">
             <Image
               src={urlFor(image).url()}
@@ -48,19 +48,21 @@ export default async function ProjectPage({
         <p className="text-lg mb-8">{description}</p>
 
         {/* Technologies Used */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4">Technologies Used</h2>
-          <div className="flex flex-wrap gap-2">
-            {techStackTags.map(({ label }, idx) => (
-              <span
-                key={idx}
-                className="px-3 py-1 bg-gray-200 rounded-full text-sm"
-              >
-                {label}
-              </span>
-            ))}
+        {techStackTags?.length && (
+          <div className="mb-8">
+            <h2 className="text-2xl font-semibold mb-4">Technologies Used</h2>
+            <div className="flex flex-wrap gap-2">
+              {techStackTags.map(({ label }, idx) => (
+                <span
+                  key={idx}
+                  className="px-3 py-1 bg-gray-200 rounded-full text-sm"
+                >
+                  {label}
+                </span>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Project Links */}
         {(liveUrl || githubUrl) && (
