@@ -55,6 +55,8 @@
   z-index: var(--z-behind);
   overflow: hidden;
   filter: var(--backdrop-blur-3xl);
+  /* Transform makes filter work on Safari */
+  transform: translate3d(0, 0, 0);
 }
 
 .gradient-top-inner,
