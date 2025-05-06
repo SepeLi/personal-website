@@ -3,6 +3,7 @@ import { serverClient as trpc } from '@personal-website/server';
 import Image from 'next/image';
 import Link from 'next/link';
 import { cache } from 'react';
+import { MdOutlineImageNotSupported } from 'react-icons/md';
 
 const getProjectsPageContent = cache(async () => {
   const trpcCaller = await trpc();
@@ -28,7 +29,7 @@ export default async function Projects() {
                 className="text-sky-500 hover:text-sky-800 font-medium flex flex-col grow"
               >
                 <div className="h-48 bg-gray-100 relative">
-                  {image?.asset && (
+                  {image?.asset ? (
                     <Image
                       src={urlFor(image).url()}
                       alt={image.asset.urlText || title}
@@ -37,6 +38,8 @@ export default async function Projects() {
                       className="object-cover rounded-lg"
                       loading="lazy"
                     />
+                  ) : (
+                    <MdOutlineImageNotSupported className="size-full fill-gray-400" />
                   )}
                 </div>
                 <div className="p-6 pb-0 grow flex flex-col">
